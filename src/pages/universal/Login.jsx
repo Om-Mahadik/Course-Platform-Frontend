@@ -63,9 +63,6 @@ const Login = ({ setUser }) => {
                 <p className="legal-notice">
                   Signing for a PersonalWebStudio account means you agree to the <span>Privacy Policy</span> and <span>Terms of Service</span>
                 </p>
-                <p className="login-footer-text">
-                  Have an account? <strong>Log in here</strong>
-                </p>
               </div>
             </motion.div>
           </motion.div>

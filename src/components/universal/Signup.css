@@ -1,30 +1,37 @@
-.signup-fields-container {
+/* Container for the whole component */
+.auth-card {
   width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.signup-fields-container {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Tighter gap to save vertical space */
+  gap: 12px;
 }
 
 .input-row {
   display: flex;
-  gap: 8px;
-  width: 100%;
+  gap: 10px;
 }
 
 .signup-input {
   background-color: #f5f5f5;
-  border: none;
-  border-radius: 18px;
+  border: 1.5px solid transparent; /* Added for smooth focus transition */
+  border-radius: 14px;
   padding: 14px 18px;
-  font-size: 16px; /* Best for mobile - prevents auto-zoom */
+  font-size: 16px;
   outline: none;
   flex: 1;
   width: 100%;
   box-sizing: border-box;
+  transition: all 0.2s ease;
 }
 
-.full-width {
-  width: 100%;
+.signup-input:focus {
+  background-color: #fff;
+  border-color: #000;
 }
 
 .password-wrapper {
@@ -34,20 +41,13 @@
 
 .password-eye-btn {
   position: absolute;
-  right: 14px;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
   background: none;
   border: none;
   cursor: pointer;
   display: flex;
-  align-items: center;
-  padding: 5px;
-}
-
-.eye-svg {
-  width: 20px; /* Adjust size to fit your SVG design */
-  height: 20px;
   opacity: 0.6;
 }
 
@@ -60,10 +60,39 @@
   font-weight: 600;
   font-size: 1rem;
   border: none;
-  margin-top: 5px;
+  margin-top: 10px;
   cursor: pointer;
+  transition: transform 0.1s ease;
 }
 
 .signup-submit-btn:active {
   transform: scale(0.98);
+}
+
+/* Professional Switch Text Styles */
+.switch-auth-container {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.switch-auth-text {
+  color: #666; /* Muted color for the question part */
+}
+
+.switch-auth-link {
+  background: none;
+  border: none;
+  color: #000; /* Bold/Darker for the action */
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+}
+
+.switch-auth-link:hover {
+  text-decoration: underline;
 }
