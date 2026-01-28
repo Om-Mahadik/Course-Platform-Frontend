@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { auth, provider, signInWithPopup } from "../../firebase/firebase";
 import axios from "axios";
 import googleIcon from "../../icons/google.svg";
-import "./GoogleLogin.css"; 
+import "./GoogleLogin.css";
 
 const GoogleLogin = ({ setUser }) => {
+  const [loading, setLoading] = useState(false);
+
   const handleLogin = async () => {
+    if (loading) return; // prevent double click
+    setLoading(true);
+
     try {
       const result = await signInWithPopup(auth, provider);
       const idToken = await result.user.getIdToken(true);
@@ -27,13 +32,27 @@ const GoogleLogin = ({ setUser }) => {
     } catch (error) {
       console.error(error);
       alert("Login failed.");
+      setLoading(false); // reset if error
     }
   };
 
   return (
-    <button onClick={handleLogin} className="google-login-button">
-      <img src={googleIcon} alt="Google" className="google-icon-svg" />
-      <span className="google-button-text">Sign in with Google</span>
+    <button
+      onClick={handleLogin}
+      className="google-login-button"
+      disabled={loading}
+    >
+      {loading ? (
+        <>
+          <span className="spinner"></span>
+          <span className="google-button-text">Signing you in…</span>
+        </>
+      ) : (
+        <>
+          <img src={googleIcon} alt="Google" className="google-icon-svg" />
+          <span className="google-button-text">Sign in with Google</span>
+        </>
+      )}
     </button>
   );
 };
