@@ -5,6 +5,8 @@ import { fetchAllCourses } from "../../services/courseService";
 import { getAuth } from "firebase/auth";
 import "./Courses.css";
 
+import DropshippingCourseCard from "../../components/users/courses/DropshippingCourseCard";
+
 // Import your new icon
 import coursesDrawerIcon from "../../icons/courses-drawer.svg";
 
@@ -61,9 +63,8 @@ const Courses = () => {
           ))}
         </div>
       ) : courses.length === 0 ? (
-        <div className="no-courses-wrapper">
-          <p className="no-courses-text">No courses available at the moment.</p>
-          <p className="coming-soon-text">New courses are coming soon! 🚀</p>
+        <div className="course-cards-stack">
+          <DropshippingCourseCard />
         </div>
       ) : (
         <div className="course-cards-stack">

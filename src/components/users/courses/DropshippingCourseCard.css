@@ -1,0 +1,326 @@
+:root {
+  --primary-black: #000000;
+  --text-gray: #999999;
+  --bg-light: #f3f4f6;
+}
+
+.exact-card-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.exact-card {
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  border-radius: 35px;
+  border: 1px solid #eeeeee;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+}
+
+/* Fixes the Lock Icon Badge */
+.card-media { position: relative; padding: 12px; }
+.card-media img:first-child {
+  width: 100%; height: 260px; object-fit: cover; border-radius: 28px;
+}
+
+.media-badge {
+  position: absolute; top: 25px; right: 25px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(0,0,0,0.05);
+  color: rgb(0, 0, 0);
+}
+
+/* STICKY FIX: Specific lock size */
+.media-badge .icon-sm {
+  width: 14px !important;
+  height: 14px !important;
+}
+
+/* Content Layout */
+.card-content { padding: 0 24px 24px; }
+
+.rating-container { display: flex; align-items: center; margin: 12px 0; }
+.star-svg { width: 18px; height: 18px; margin-right: 2px; }
+.rating-text { color: #333; font-size: 14px; margin-left: 8px; font-weight: 500; }
+
+.course-title { font-size: 24px; font-weight: 600; margin-bottom: 8px; color: #000; }
+.course-summary { font-size: 15px; color: var(--text-gray); line-height: 1.5; margin-bottom: 20px; }
+
+.feature-list { margin-bottom: 24px; }
+.feature-item { display: flex; align-items: center; gap: 10px; font-size: 15px; color: #111; margin-bottom: 8px; }
+.tick-icon { width: 20px; height: 20px; }
+
+/* Pricing Section */
+.pricing-row { display: flex; align-items: center; margin-bottom: 24px; }
+.price-tag { font-size: 24px; font-weight: 700; color: #000; }
+.old-price { font-size: 16px; text-decoration: line-through; color: #cccccc; margin-left: 8px; }
+.date-badge { 
+  background: var(--bg-light); 
+  padding: 8px 14px; 
+  border-radius: 20px; 
+  font-size: 13px; 
+  font-weight: 500; 
+  margin-left: auto; 
+  color: #000 ;
+}
+
+/* Single Shimmer Button */
+.shimmer-btn {
+  width: 100%;
+  padding: 18px;
+  background: #000;
+  color: #fff;
+  border-radius: 14px;
+  border: none;
+  font-size: 17px;
+  font-weight: 350;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.shimmer-effect {
+  position: absolute; top: 0; left: -150%; width: 50%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: skewX(-20deg);
+  animation: shine 3s infinite linear;
+}
+
+@keyframes shine {
+  0% { left: -150%; }
+  25% { left: 150%; }
+  100% { left: 150%; }
+}
+
+/* Progress Bar Fix */
+.card-footer { border-top: 1px solid #f9f9f9; padding-top: 10px; }
+.spots-info { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 10px; font-weight: 500; }
+.spots-left { display: flex; align-items: center; gap: 6px; color: #444; }
+.filling-fast { color: #e11d48; }
+
+.progress-track { 
+  height: 8px; 
+  background: #e0e0e0; /* Grey track visible */
+  border-radius: 10px; 
+  width: 100%;
+  overflow: hidden;
+}
+
+.progress-fill { 
+  height: 100%; 
+  background: #000; /* Black bar */
+  border-radius: 10px; 
+}
+
+.bar-animate { animation: growBar 1.5s ease-out forwards; }
+@keyframes growBar { from { width: 0%; } }
+
+
+
+
+/* Footer Container */
+.card-footer {
+  margin-top: 10px;
+  padding-top: 15px;
+  border-top: 1px solid #f5f5f5;
+}
+
+/* Info Row */
+.spots-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-family: inherit;
+}
+
+.spots-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.filling-fast {
+  font-size: 13px;
+  font-weight: 700;
+  color: #e11d48;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  animation: pulseText 2s infinite;
+}
+
+/* Progress Track - The "Grey" bar */
+.progress-track {
+  height: 10px;
+  width: 100%;
+  background-color: #e5e7eb; /* Soft grey track */
+  border-radius: 20px;
+  overflow: hidden; /* Clips the inner bar */
+  position: relative;
+}
+
+/* Progress Fill - The "Black" bar */
+.progress-fill {
+  height: 100%;
+  background-color: #000000;
+  border-radius: 20px;
+  /* Use transform for smoother performance than 'width' */
+  transform-origin: left;
+  transition: width 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Animations */
+@keyframes pulseText {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.bar-animate {
+  animation: growBar 1.8s cubic-bezier(0.1, 0.5, 0.1, 1) forwards;
+}
+
+@keyframes growBar {
+  from { width: 0%; }
+}
+
+
+
+/* Footer Container */
+.card-footer {
+  margin-top: 24px;
+  padding-top: 12px;
+}
+
+/* Info Row - Aligns text to opposite ends */
+.spots-info {
+  display: flex;
+  justify-content: space-between; /* This pushes 'Filling Fast' to the right */
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.spots-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+}
+
+/* Fix for the Seats Icon size */
+.spots-left .icon-sm {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.filling-fast {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e11d48; /* Red color from your image */
+}
+
+/* The Progress Bar Track */
+.progress-track {
+  height: 6px; /* Slimmer, like the image */
+  width: 100%;
+  background-color: #d1d5db; /* Grey track */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* The Progress Bar Fill */
+.progress-fill {
+  height: 100%;
+  background-color: #000000; /* Pure black fill */
+  border-radius: 10px;
+}
+
+/* Smooth Animation */
+.bar-animate {
+  animation: growBar 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes growBar {
+  from { width: 0%; }
+}
+
+
+/* Cleaned Footer Section */
+.card-footer {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #f9f9f9; /* Very subtle divider */
+}
+
+.spots-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.spots-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111111;
+  line-height: 1;
+}
+
+/* Precise icon sizing for neatness */
+.footer-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.filling-fast {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e11d48; /* Red urgency color */
+}
+
+/* The Neat Progress Bar */
+.progress-track {
+  height: 6px; /* Slim and elegant */
+  width: 100%;
+  background-color: #e5e7eb; /* Clean, light grey track */
+  border-radius: 100px; /* Fully rounded ends */
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #000000; /* High-contrast black */
+  border-radius: 100px;
+}
+
+/* Smooth, non-jittery animation */
+.bar-animate {
+  animation: growBar 1.6s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes growBar {
+  from { width: 0%; }
+}
