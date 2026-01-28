@@ -1,0 +1,68 @@
+/* Dashboard.css */
+
+/* 1. Main Layout Container */
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+/* 2. Left Column (Where your content lives) */
+.dashboard-content-col {
+  display: flex;
+  justify-content: center; /* Aligns content toward the center split */
+  background-color: var(--bg-color);
+
+  overflow-y: auto;
+}
+
+/* Ensures content stays at your 450px width limit on large screens */
+.inner-scroll-area {
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 3. Right Column (The visual half) */
+.dashboard-visual-col {
+  background: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 4. Typography & Spacing */
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 25px 0 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.course-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 5. RESPONSIVE LOGIC (Mobile) */
+@media (max-width: 900px) {
+  .dashboard-layout {
+    grid-template-columns: 1fr; /* Stack everything in one column */
+  }
+
+  .dashboard-visual-col {
+    display: none; /* Hide the empty half on mobile */
+  }
+
+  .dashboard-content-col {
+    justify-content: center; /* Center the content on mobile */
+
+  }
+}

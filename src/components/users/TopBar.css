@@ -1,0 +1,96 @@
+.topbar-container {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  background-color: transparent; /* It sits inside the white card */
+}
+
+.topbar-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.user-section-wrapper {
+  position: relative;
+}
+
+.user-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  background-color: #f3f4f6; /* Light gray pill background */
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  user-select: none;
+}
+
+.user-pill:hover {
+  background-color: #e5e7eb;
+}
+
+.user-icon {
+  font-size: 1.1rem;
+}
+
+.user-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.chevron {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+/* User Drawer Styling */
+.user-drawer {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  width: 160px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f0f0f0;
+  padding: 8px 0;
+  z-index: 100;
+  animation: slideIn 0.2s ease-out;
+}
+
+.drawer-item {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  color: #4b5563;
+  cursor: pointer;
+}
+
+.drawer-item:hover {
+  background-color: #f9fafb;
+  color: #000;
+}
+
+.drawer-item.logout {
+  color: #ef4444;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #f3f4f6;
+  margin: 4px 0;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

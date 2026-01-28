@@ -1,0 +1,96 @@
+.vd-sidebar-section {
+  margin-bottom: 35px;
+}
+
+.vd-section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.vd-title-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.vd-resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.vd-resource-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.vd-resource-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-color-active); 
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.07);
+}
+
+.vd-resource-name {
+  font-size: 15px;
+  color: var(--text-color);
+  font-weight: 500;
+  flex: 1;
+}
+
+/* --- THE REDIRECT ARROW OPTICAL FIX --- */
+.vd-action-icon {
+  display: block;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  margin-left: 15px;
+}
+
+/* Target the redirect arrow specifically to make it look bigger */
+.is-redirect {
+  width: 32px; 
+  height: 32px;
+  margin: -10px 0;
+  filter: var(--icon-color);
+}
+
+/* Keep download icon at the size you liked */
+.is-download {
+  width: 24px;
+  height: 24px;
+  filter: var(--icon-color);
+}
+
+.vd-resource-card:hover .vd-action-icon {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.vd-resource-card:hover .is-redirect {
+  transform: scale(1.1) translateX(3px); /* Slide effect for redirect */
+}
+
+@media (max-width: 768px) {
+  .vd-resource-card {
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+  
+  .is-redirect {
+    width: 35px;
+    height: 35px;
+    margin: -10px 0;
+  }
+}

@@ -1,0 +1,91 @@
+.outlet-content-wrapper {
+  
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.course-content-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 16px;
+}
+
+.column-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.head-icon {
+  font-size: 20px;
+}
+
+.column-head h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Responsive adjustment */
+@media (max-width: 1024px) {
+  .course-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ------------------ Loading Skeletons ------------------ */
+.course-loading-wrapper {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+}
+
+.sidebar-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skeleton-module {
+  height: 40px;
+  border-radius: 8px;
+  background: linear-gradient(-90deg, #e0e0e0 0%, #f0f0f0 50%, #e0e0e0 100%);
+  background-size: 400% 400%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.videos-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.skeleton-video {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  height: 140px;
+  border-radius: 12px;
+  background: linear-gradient(-90deg, #e0e0e0 0%, #f0f0f0 50%, #e0e0e0 100%);
+  background-size: 400% 400%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* No course message styling */
+.no-course-text {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #555;
+}

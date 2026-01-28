@@ -1,0 +1,132 @@
+.vli-card {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border-color);
+  /* Normal Shadow: Soft and natural depth */
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.02), 
+    0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.vli-card:hover {
+  transform: translateY(-4px); /* Lift effect */
+  border-color: var(--border-color-active);
+
+  /* Hover Shadow: Increased spread and blur to show height */
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.08), 
+    0 4px 8px rgba(0, 0, 0, 0.04);
+}
+
+.vli-thumb img {
+  width: 180px;
+  height: 105px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: var(--bg-color);
+  display: block;
+}
+
+.vli-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  padding: 2px 0;
+}
+
+.vli-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0 0 6px 0;
+  letter-spacing: -0.01em;
+}
+
+.vli-desc {
+  font-size: 0.88rem;
+  color: #666666;
+  margin: 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.vli-footer {
+  margin-top: 8px;
+}
+
+/* Professional Minimal Pill */
+.vli-time-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background-color: #e7f7fc;
+
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #555555;
+}
+
+.vli-time-icon {
+  width: 12px;
+  height: 12px;
+  opacity: 0.6;
+}
+
+
+/* --- MOBILE RESPONSIVENESS (Horizontal Style) --- */
+@media (max-width: 600px) {
+  .vli-card {
+    /* Keep it horizontal but tighten the gap */
+    flex-direction: row; 
+    gap: 12px;
+    padding: 8px;
+    align-items: center; /* Centers image with text vertically */
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .vli-thumb {
+    /* Set a fixed smaller width for the thumb area on mobile */
+    flex: 0 0 110px; 
+  }
+
+  .vli-thumb img {
+    width: 110px; 
+    height: 70px; /* Maintains a nice 16:9-ish ratio for small thumbs */
+    object-fit: cover;
+  }
+
+  .vli-content {
+    /* Let the text take up all remaining space */
+    flex: 1;
+    min-width: 0; /* Critical for preventing text from pushing width */
+  }
+
+  .vli-title {
+    font-size: 0.88rem; /* Shrink font slightly for mobile */
+    line-height: 1.2;
+    margin-bottom: 4px;
+    white-space: normal; /* Allow wrap if title is long */
+  }
+
+  .vli-desc {
+    font-size: 0.75rem;
+    -webkit-line-clamp: 1; /* Only 1 line on mobile to save space */
+  }
+
+  .vli-time-pill {
+    padding: 2px 8px;
+    font-size: 0.65rem;
+  }
+}

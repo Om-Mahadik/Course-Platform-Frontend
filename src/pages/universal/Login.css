@@ -1,0 +1,87 @@
+/* Full Screen Wrapper */
+.login-page-wrapper {
+  background-color: #000;
+  height: 100dvh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Splash Screen Centering */
+.splash-screen {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.splash-logo {
+  max-width: 180px; /* Adjust based on your logo width */
+  width: 80%;
+  height: auto;
+}
+
+/* Container for the page after splash */
+.main-login-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Brand Header Space */
+.brand-header-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The White Card */
+.login-bottom-card {
+  background-color: #fff;
+  width: 100%;
+  max-width: 480px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  margin: 0 auto;
+  max-height: 80dvh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-content {
+  padding: 30px 24px 40px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* UI Elements */
+.divider {
+  margin: 18px 0;
+  color: #888;
+  font-size: 0.9rem;
+  width: 100%;
+  text-align: center;
+}
+
+.legal-notice {
+  font-size: 11px;
+  color: #999;
+  text-align: center;
+  margin-top: 20px;
+  line-height: 1.4;
+}
+
+.legal-notice span { font-weight: 600; color: #666; }
+
+.login-footer-text {
+  margin-top: 25px;
+  font-size: 15px;
+  color: #000;
+  padding-bottom: 20px;
+}

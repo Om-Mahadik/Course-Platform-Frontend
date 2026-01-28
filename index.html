@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    
+    <title>Personal Web Studio | Course Platform</title>
+
+    <style>
+      /* Global reset to remove mobile "blue highlight" and selection overlays */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent; 
+        -webkit-touch-callout: none;
+      }
+
+      body {
+        background-color: #000000; /* Matches your Layout-Wrapper */
+        color: #ffffff;
+        overflow: hidden; /* Prevents "bounce" scrolling on the main body */
+        height: 100vh;
+        width: 100vw;
+      }
+
+      #root {
+        height: 100%;
+        width: 100%;
+      }
+
+      /* Native scroll feel for content areas */
+      .content-area {
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

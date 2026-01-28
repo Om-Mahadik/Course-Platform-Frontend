@@ -1,0 +1,155 @@
+.soft-pro-card {
+  display: flex;
+  background: var(--card-bg);
+  border-radius: 32px;
+  padding: 20px;
+  gap: 30px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 100%;
+  box-sizing: border-box;
+  
+  /* DEEPER PROFESSIONAL SHADOWS */
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.04), 
+    0 2px 6px rgba(0, 0, 0, 0.04),
+    0 20px 40px -10px rgba(0, 0, 0, 0.07);
+}
+
+.soft-pro-card:hover {
+  transform: translateY(-6px); /* Slightly more lift */
+  /* Intense but soft hover shadow */
+  box-shadow: 
+    0 30px 60px -12px rgba(0, 0, 0, 0.12),
+    0 18px 36px -18px rgba(0, 0, 0, 0.1);
+}
+
+/* --- DESKTOP IMAGE SIZE --- */
+.soft-image-container {
+  width: 420px; 
+  height: 240px;
+  border-radius: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.soft-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.soft-info-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px 0;
+  min-width: 0;
+}
+
+.soft-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.soft-creator {
+  font-size: 0.95rem;
+  color: #999;
+  margin: 4px 0 15px 0;
+}
+
+/* --- Faint Skyblue Pills (Not Bold) --- */
+.soft-badge-row {
+  display: flex;
+  gap: 12px;
+}
+
+.soft-pill-blue {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f0f9ff; 
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500; 
+  color: #5a8fb9; 
+}
+
+.soft-pill-blue img {
+  width: 14px;
+  height: 14px;
+  opacity: 0.5;
+}
+
+/* --- COMPACT PROGRESS --- */
+.soft-progress-group {
+  width: 100%;
+  max-width: 320px; 
+  margin-top: auto;
+}
+
+.soft-progress-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #777;
+  margin-bottom: 6px;
+}
+
+.compact-perc {
+  font-size: 0.85rem;
+  color: #000;
+  font-weight: 800;
+}
+
+.soft-bar-bg {
+  height: 6px;
+  background: var(--bg-color);
+  border-radius: 10px;
+}
+
+.soft-bar-fill {
+  height: 100%;
+  background: var(--button-color);
+  border-radius: 10px;
+}
+
+/* --- MOBILE VERTICAL STACK --- */
+@media (max-width: 768px) {
+  .soft-pro-card {
+    flex-direction: column;
+    padding: 16px;
+    gap: 20px;
+    border-radius: 28px;
+    /* Extra soft shadow depth for mobile screens */
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.08);
+  }
+
+  .soft-image-container {
+    width: 100%; 
+    height: 200px; 
+    border-radius: 20px;
+  }
+
+  .soft-info-container {
+    padding: 0 4px;
+  }
+
+  .soft-title {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+  }
+
+  .soft-progress-group {
+    max-width: 100%; 
+    margin-top: 15px;
+  }
+}

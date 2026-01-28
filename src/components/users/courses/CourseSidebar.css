@@ -1,0 +1,273 @@
+.c-sidebar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Tightened gap between header and list */
+  user-select: none;
+}
+
+.c-sidebar-header {
+  display: flex;
+  align-items: center; /* Centers icon and text vertically */
+  gap: 10px;
+  padding: 0 8px 4px 8px; /* Added bottom padding for visual separation */
+  
+}
+
+.c-header-icon {
+  width: 22px; /* Scaled down for better alignment with text height */
+  height: 22px;
+  filter: var(--icon-color);
+  display: block;
+}
+
+.c-header-title {
+  font-size: 1rem;
+  font-weight: 500; /* Medium-bold for a cleaner minimal look */
+  color: var(--text-color);
+  letter-spacing: -0.01em;
+  margin: 0;
+  line-height: 1; /* Ensures text doesn't push the container height */
+}
+
+.c-sidebar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; 
+}
+
+.c-sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border-color); 
+}
+
+.c-sidebar-item:hover {
+  border-color: var(--border-color-active);
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.c-sidebar-item.is-active {
+  background-color: var(--card-bg);
+  border-color: var(--border-color-active); /* Bold Monochrome Active State */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.c-index-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  margin-right: 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #9ca3af;
+  background: var(--bg-color);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.c-sidebar-item.is-active .c-index-badge {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+.c-sidebar-label {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-color);
+  line-height: 1.2;
+}
+
+.c-sidebar-item.is-active .c-sidebar-label {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+
+
+
+/* Mobile View Styling */
+.c-sidebar-mobile-view {
+  padding: 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color);
+  text-align: center;
+  background: var(--bg-color);
+  border-radius: 12px;
+  border: 1px dashed #eaeaea;
+}
+
+/* Rest of your existing CSS stays exactly the same */
+.c-sidebar-container {
+  display: flex;
+  flex-direction: column;
+  /* ... existing styles ... */
+}
+
+
+
+/* --- MOBILE DROPDOWN STYLES --- */
+.c-mob-dropdown-container {
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  
+}
+
+.c-mob-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.c-mob-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.c-mob-progress {
+  font-size: 14px;
+  font-weight: 600;
+  color: #9ca3af;
+}
+
+.c-progress-current {
+  color: #000000; /* Matches the blue underline in your screenshot */
+
+}
+
+.c-mob-select-pill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: #f9f9f9;
+  border-radius: 14px;
+  font-weight: 500;
+  color: #1f66ff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.c-mob-select-pill.is-open {
+  background: var(--card-bg);
+}
+
+.c-dropdown-arrow {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+  filter: var(--icon-color);
+}
+
+.c-dropdown-arrow.up {
+  transform: rotate(180deg);
+}
+
+/* Smooth Animation Logic */
+.c-mob-dropdown-list {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.c-mob-dropdown-list.show {
+  max-height: 500px; /* Adjust based on expected content */
+  opacity: 1;
+  padding-bottom: 20px;
+}
+
+
+.c-mob-selected-content {
+  display: flex;
+  align-items: center;
+}
+
+/* Ensure the badge in the pill matches the list theme */
+.active-pill-badge {
+  background-color: var(--button-color) !important;
+  color: var(--text-color) !important;
+  margin-right: 12px;
+}
+
+.active-pill-label {
+  color: var(--text-color)!important;
+  font-weight: 600 !important;
+}
+
+/* SVG Arrow Styling */
+.c-dropdown-arrow-svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+  opacity: 1;
+}
+
+.c-dropdown-arrow-svg.up {
+  transform: rotate(180deg);
+}
+
+.c-mob-select-pill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px; /* Slightly tighter padding to match list items */
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color); /* Same border as list items */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.c-mob-select-pill.is-open {
+  border-color: var(--border-color-active);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+/* --- MOBILE DROPDOWN STYLES --- */
+.c-mob-dropdown-container {
+  /* Sticky Logic */
+  position: sticky; 
+  top: -25px; 
+  z-index: 99; 
+  
+  /* FULL WIDTH HACK */
+  /* This pushes the background to the edges of the window */
+  margin-left: -16px;   /* Match this to your parent's left padding */
+  margin-right: -16px;  /* Match this to your parent's right padding */
+  padding-left: 16px;   /* Adds the padding back internally to align content */
+  padding-right: 16px;
+  
+  /* Gradient & Blur (As requested previously) */
+  background: var(--bg-color);
+
+
+  padding-top: 16px;
+  padding-bottom: 6px; /* More bottom padding for a smoother fade */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  
+  /* Remove width constraints if any */
+  width: auto; 
+}
+
+/* Ensure the inner rows don't stretch text to the very edge */
+.c-mob-header-row, .c-mob-select-pill {
+  width: 100%;
+}

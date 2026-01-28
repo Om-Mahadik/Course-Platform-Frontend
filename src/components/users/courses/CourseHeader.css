@@ -1,0 +1,155 @@
+/* ==========================================================================
+   1. DESKTOP VIEW (Visible when screen > 768px)
+   ========================================================================== */
+.ch-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 40px;
+  align-items: flex-start;
+}
+
+.ch-left { flex: 1; }
+
+.ch-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.ch-label-icon {
+  width: 22px;
+  height: 22px;
+  filter: var(--icon-color);
+}
+
+.ch-label-text {
+  font-weight: 600;
+  color: VAR(--text-color);
+  font-size: 1rem;
+}
+
+.ch-title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 15px;
+}
+
+.ch-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0051ff;
+  margin: 0;
+}
+
+.ch-para {
+  color: #9ca3af;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  max-width: 90%;
+}
+
+.ch-img-shadow-box {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02), 0 10px 20px rgba(0, 0, 0, 0.06);
+}
+
+.ch-hero-img {
+  width: 320px;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================================================================
+   2. MOBILE VIEW - STICKY (Visible when screen <= 768px)
+   ========================================================================== */
+.ch-mobile-wrapper {
+  /* Sticky Logic */
+
+  top: 0;
+  z-index: 100;
+  background-color: var(--bg-color); /* Prevents content from showing behind text */
+
+  
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ch-mob-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Added for your stack: Label on top, Title below */
+.ch-mob-header-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ch-mob-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.ch-mob-creator {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   3. SHARED COMPONENTS (Pills & Stats)
+   ========================================================================== */
+.ch-info-pill {
+  background: var(--card-bg);
+  border: none;
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.ch-stats-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.ch-stat-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f5f1e9;
+  border: 1px solid #ede7de;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+/* Mobile specific pill adjustments */
+.ch-mobile-wrapper .ch-stat-pill {
+  border: none;
+  padding: 4px 12px;
+  border-radius: 8px;
+}
+
+.ch-pill-icon {
+  width: 14px;
+  height: 14px;
+  opacity: 0.7;
+}

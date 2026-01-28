@@ -1,0 +1,41 @@
+.date-scroll-wrapper {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 10px 0 20px;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.date-scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.date-item {
+  flex: 0 0 auto;
+  min-width: 60px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 16px;
+  color: #aaa;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.date-item.active {
+  background: #ff7a59;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.date-number {
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.date-day {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+

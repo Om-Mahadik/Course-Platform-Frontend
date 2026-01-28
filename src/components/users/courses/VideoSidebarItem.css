@@ -1,0 +1,61 @@
+.vd-sidebar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff; /* Clean white for premium look */
+  padding: 14px 18px;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  
+  /* Soft shadow for depth */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.vd-sidebar-row:hover {
+  transform: translateY(-3px);
+  background: #ffffff;
+  border-color: #000000; /* Sharp black border on hover */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.06);
+}
+
+.vd-sidebar-name {
+  font-size: 14.5px;
+  color: #000000;
+  font-weight: 500;
+  flex: 1;
+}
+
+/* --- ICON OPTIMIZATION --- */
+.vd-sidebar-action-icon {
+  opacity: 0.5;
+  transition: all 0.3s ease;
+  margin-left: 12px;
+}
+
+/* Fixing the visual weight of the redirect arrow */
+.is-redir {
+  width: 28px;
+  height: 28px;
+}
+
+/* Keeping download arrow at the size you liked */
+.is-dl {
+  width: 20px;
+  height: 20px;
+}
+
+.vd-sidebar-row:hover .vd-sidebar-action-icon {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .vd-sidebar-row {
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+}

@@ -1,0 +1,21 @@
+.filter-wrapper {
+  display: flex;
+  gap: 12px;
+}
+
+.tab-btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  background-color: #f1f3f5;
+  color: #7a7a7a;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+  background-color: #e3f2fd;
+  color: #2b6cb0;
+}

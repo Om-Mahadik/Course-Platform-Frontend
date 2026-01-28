@@ -1,0 +1,8 @@
+/* Paste at the top of your CSS */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+html, body {
+  font-family: 'Manrope', sans-serif;
+  background-color: #151515;
+  color: #E0E0E0;
+}

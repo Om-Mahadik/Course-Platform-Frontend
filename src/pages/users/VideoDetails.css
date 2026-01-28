@@ -1,0 +1,69 @@
+/* Container and Layout */
+.vd-main-container {
+  padding: 40px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  color: #000;
+}
+
+.vd-module-header {
+  margin-bottom: 24px;
+  font-size: 1rem;
+  color: #555;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 12px;
+}
+
+.vd-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 350px; /* Video player gets more space */
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.vd-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* --- Mobile View (Everything stacked) --- */
+@media (max-width: 1024px) {
+  .vd-main-container {
+    padding: 0;
+  }
+
+  .vd-content-grid {
+    display: flex;
+    flex-direction: column; /* Forces one below another */
+    gap: 30px;
+  }
+
+  .vd-sidebar {
+    width: 100%;
+  }
+
+  /* Make the header text a bit smaller on phones */
+  .vd-module-header {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+}
+
+/* --- Premium Touches using your palette --- */
+.vd-module-header strong {
+  color: #6942FD; /* Your primary purple */
+}
+
+/* Adding a subtle hover effect for your sidebar items */
+.vd-sidebar section {
+  background: #fff;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+
+/* If you want the 'Upcoming Videos' thumbnails to look better */
+.vd-sidebar img {
+  border-radius: 8px;
+  object-fit: cover;
+}

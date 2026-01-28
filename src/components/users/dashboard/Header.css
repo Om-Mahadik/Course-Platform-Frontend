@@ -1,0 +1,140 @@
+/* Header.css */
+
+/* Center the card on the page with some breathing room */
+.header-wrapper {
+  padding: 0;
+  background-color: #f3686800; /* Light gray background to make the white card pop */
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-card {
+  position: relative;
+  background: #ffffff;
+  width: 100%;
+  max-width: 900px; /* Adjust based on your layout */
+  padding: 40px 50px;
+  border-radius: 30px; /* Very round corners as seen in your image */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); /* Soft professional shadow */
+  overflow: hidden; /* Clips the cat if it goes outside the round border */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  
+  /* Entrance Animation */
+  animation: cardFadeIn 0.8s ease-out;
+}
+
+.text-content {
+  z-index: 2; /* Keeps text above any background elements */
+}
+
+.greeting-text {
+  margin: 0;
+  font-size: 1rem; /* Large and clean */
+  color: #7a7a7a;
+  font-weight: 400;
+}
+
+.welcome-name {
+  margin: 5px 0 0 0;
+  font-size: 2rem; /* Bold and prominent */
+  font-weight: 600;
+  color: var(--text-color);
+  letter-spacing: -1px;
+}
+
+.cat-container {
+  position: absolute;
+  right: 40px;
+  bottom: -10px; /* Positions the cat so it peeks from the bottom */
+  width: 180px;  /* Adjust size to match your image */
+}
+
+.peeking-cat {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Entrance Animation Keyframes */
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* Header.css */
+
+.header-wrapper {
+  width: 100%;
+  display: block; /* Changed from flex to block to prevent layout squeezing */
+  margin-bottom: 30px;
+  /* Crucial: Allow shadows to exist outside the bounds */
+  overflow: visible; 
+  padding: 15px 0; /* Vertical padding only to give the shadow vertical space */
+}
+
+.dashboard-card {
+  position: relative;
+  background: var(--card-bg); /* Use CSS variable for theming */
+  
+  /* This ensures the card takes full width of your 450px parent 
+     but the shadow is allowed to overlap the parent's padding */
+  width: 100%; 
+  
+  padding: 40px 50px;
+  border-radius: 30px;
+  
+  /* We use a negative spread or larger blur to make it "glow" 
+     without hitting the hard edges of the parent container */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12); 
+  
+  /* overflow: hidden is fine here for the cat, 
+     but the parent MUST be overflow: visible */
+  overflow: hidden; 
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  animation: cardFadeIn 0.8s ease-out;
+}
+
+/* ... keep your existing greeting and cat styles ... */
+
+
+
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+
+  .header-wrapper {
+    padding: 0px;
+  }
+  .dashboard-card {
+    padding: 14px 20px;
+    border-radius: 20px;
+    
+  }
+  
+  .welcome-name {
+    font-size: 1.5rem;
+  }
+  
+  .greeting-text {
+    font-size: 1rem;
+  }
+  
+  .cat-container {
+    width: 120px;
+    right: 20px;
+  }
+}
+

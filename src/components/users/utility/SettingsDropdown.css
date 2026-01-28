@@ -1,0 +1,130 @@
+/* WRAPPER & ANIMATION */
+.settings-dropdown-wrapper {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  width: 260px;
+  z-index: 1000;
+  transform-origin: top right;
+  animation: settingsReveal 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1) forwards;
+}
+
+@keyframes settingsReveal {
+  from { 
+    opacity: 0; 
+    transform: translateY(8px) scale(0.95); 
+    filter: blur(4px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+    filter: blur(0);
+  }
+}
+
+/* THE GLASS CARD */
+.settings-glass-card {
+  background: rgba(255, 255, 255, 0.85); /* Light glass to match image */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 22px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.settings-arrow-top {
+  position: absolute;
+  top: -5px;
+  right: 14px;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  transform: rotate(45deg);
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  border-left: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* ITEM STYLING */
+.settings-option, .settings-option-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.settings-option:hover, .settings-option-btn:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.option-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.option-icon-bg {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.option-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* TOGGLE SWITCH */
+.custom-toggle {
+  width: 40px;
+  height: 22px;
+  background: #e4e4e7;
+  border-radius: 20px;
+  position: relative;
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-on {
+  background: #000000;
+}
+
+.toggle-handle {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.toggle-on .toggle-handle {
+  left: 20px;
+}
+
+/* DIVIDERS & HEADERS */
+.settings-divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.05);
+  margin: 8px 12px;
+}
+
+.settings-label-header {
+  font-size: 11px;
+  font-weight: 700;
+  color: #a1a1aa;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 8px 12px 4px 12px;
+}

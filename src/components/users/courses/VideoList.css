@@ -1,0 +1,49 @@
+/* --- VIDEO LIST CONTAINER --- */
+.cvl-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  user-select: none;
+}
+
+/* --- STICKY VIDEO HEADER --- */
+.cvl-header {
+  position: sticky;
+  /* Adjust this: (Modules Sticky Top) + (Modules Sticky Height) */
+  /* If Modules is top: -25px, this usually lands around 75px - 90px */
+  top: 85px; 
+  z-index: 98; /* One level below the Modules dropdown (99) */
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+  /* Full Width Hack to match Modules */
+  margin-left: -16px;
+  margin-right: -16px;
+  padding: 12px 24px; /* Internal padding to keep content aligned */
+
+  /* White Gradient & Blur to match the theme */
+  background: var(--bg-color);
+}
+
+.cvl-header-icon {
+  width: 22px;
+  height: 22px;
+  filter: var(--icon-color);
+}
+
+.cvl-header-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* --- NORMAL SCROLLING STACK --- */
+.cvl-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 4px; /* Small horizontal padding so cards don't touch edges */
+}

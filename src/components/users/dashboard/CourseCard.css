@@ -1,0 +1,135 @@
+/* Container & Animation */
+.courses-container {
+  margin: 24px 0;
+  width: 100%;
+  max-width: 480px;
+}
+
+.animate-reveal {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Card Base */
+.course-card {
+  background: var(--card-bg);
+  border-radius: 28px;
+  padding: 24px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Header & Icons */
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.course-title-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.title-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.arrow-link {
+  color: #ccc;
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover .arrow-link {
+  transform: translateX(5px);
+  color: #000;
+}
+
+/* Progress Bar */
+.progress-container {
+  height: 10px;
+  background-color: var(--bg-color);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--button-color);
+  border-radius: 20px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Footer */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #888;
+}
+
+.progress-percentage {
+  font-weight: 600;
+  color: #000;
+}
+
+/* Empty & Support State */
+.empty-card {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.empty-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.support-button {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.support-button:hover {
+  opacity: 0.8;
+}
+
+/* Skeleton Shimmer */
+.skeleton-loading {
+  pointer-events: none;
+}
+
+.skeleton-line {
+  background: linear-gradient(90deg, #f0f0f0 25%, #f8f8f8 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.title-line { height: 20px; width: 60%; margin-bottom: 25px; }
+.progress-line { height: 10px; width: 100%; margin-bottom: 15px; }
+.footer-line { height: 14px; width: 40%; }

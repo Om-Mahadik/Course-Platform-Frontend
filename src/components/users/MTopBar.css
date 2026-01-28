@@ -1,0 +1,298 @@
+.mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #000000;
+  color: #ffffff;
+  position: relative;
+  z-index: 100;
+}
+
+.mobile-logo-img {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+}
+
+.mobile-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-menu-wrapper {
+  position: relative; /* Anchor for the dropdown */
+}
+
+.mobile-icon-btn {
+  width: 38px;
+  height: 38px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.mobile-icon-btn.active {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.m-user-avatar-small {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  display: block;
+}
+
+.m-user-initials {
+  width: 32px;
+  height: 32px;
+  background: black;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.m-action-svg {
+  width: 22px;
+  height: 22px;
+
+}
+
+.premium-dropdown-wrapper {
+  position: absolute;
+  top: 50px;
+  right: -10px; /* Slight offset for better alignment */
+  width: 280px;
+  z-index: 1000;
+  
+  /* The "Spring" Animation */
+  animation: mobileMenuReveal 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.15) forwards;
+  transform-origin: top right;
+}
+
+@keyframes mobileMenuReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(-10px);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+
+.mobile-icon-btn {
+  /* ... existing styles ... */
+  transition: background-color 0.3s ease, transform 0.2s active;
+}
+
+.mobile-icon-btn:active {
+  transform: scale(0.92); /* Shrink slightly when tapped */
+}
+
+.mobile-icon-btn.active {
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05); /* Soft glow when active */
+}
+
+
+/* --- DROPDOWN WRAPPER & ANIMATION --- */
+.premium-dropdown-wrapper {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  width: 280px;
+  z-index: 1000;
+  transform-origin: top right;
+  /* Modern "Spring" opening animation */
+  animation: premiumReveal 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1) forwards;
+}
+
+@keyframes premiumReveal {
+  from { 
+    opacity: 0; 
+    transform: translateY(8px) scale(0.96); 
+    filter: blur(4px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+    filter: blur(0);
+  }
+}
+
+/* --- THE GLASS CARD --- */
+.premium-card {
+  /* Frosted Glass Effect */
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  
+  border-radius: 20px;
+  padding: 18px;
+  
+  /* Deep Multi-Layered Shadows */
+  box-shadow: 
+    0 10px 30px -10px rgba(0, 0, 0, 0.2),
+    0 20px 50px -15px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(0, 0, 0, 0.04);
+  
+  /* Light border to make glass edges pop */
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dropdown-arrow-top {
+  position: absolute;
+  top: -5px;
+  right: 18px;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.85); /* Matches card */
+  transform: rotate(45deg);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  z-index: -1;
+}
+
+/* --- PROFILE SECTION --- */
+.profile-horizontal-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 4px 2px;
+}
+
+.user-img-premium {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px; /* Squircle */
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #000000;
+}
+
+.user-details-premium {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.name-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.user-name-text {
+  font-weight: 700;
+  font-size: 15px;
+  color: #111;
+  letter-spacing: -0.2px;
+}
+
+.admin-icon {
+  color: #007bff;
+}
+
+.user-email-text {
+  font-size: 12px;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.premium-divider-lite {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.06), transparent);
+  margin: 16px 0;
+}
+
+/* --- LOGOUT BUTTON --- */
+.black-logout-btn {
+  width: 100%;
+  height: 46px;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.black-logout-btn:hover {
+  background: #222222;
+  transform: translateY(-1px);
+}
+
+.black-logout-btn:active {
+  transform: scale(0.97); /* Physical feedback on tap */
+}
+
+/* --- HEADER / TRIGGER STYLES --- */
+.mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #000000;
+  color: #ffffff;
+  position: relative;
+  z-index: 100;
+}
+
+.mobile-icon-btn {
+  width: 38px;
+  height: 38px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.mobile-icon-btn.active {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+
+/* Add this to ensure the settings menu aligns to the right edge of its button */
+.settings-dropdown-wrapper {
+  right: 0; 
+  top: 55px; /* Adjust based on your header height */
+}
+
+/* Ensure the wrapper doesn't clip the dropdown shadow */
+.user-menu-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
