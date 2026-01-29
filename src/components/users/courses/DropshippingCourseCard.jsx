@@ -65,10 +65,19 @@ const DropshippingCourseCard = () => {
           </div>
 
           {/* Single High-Conversion Button */}
-          <button className="shimmer-btn">
-            Get Access Now
-            <span className="shimmer-effect"></span>
-          </button>
+{/* Single High-Conversion Button */}
+<button
+  className="shimmer-btn"
+  onClick={() => {
+    const whatsappLink = "https://wa.me/917559436129?text=Hi%2C%20I%20want%20to%20enroll%20in%20Dropshipping%20Course%202026.";
+    window.open(whatsappLink, "_blank");
+  }}
+>
+  Get Access Now
+  <span className="shimmer-effect"></span>
+</button>
+
+
 
           {/* Footer Scarcity */}
           <div className="card-footer">

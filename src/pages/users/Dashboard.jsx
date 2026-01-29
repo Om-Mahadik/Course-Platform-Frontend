@@ -145,14 +145,15 @@ const Dashboard = () => {
               <div className="course-card empty-card">
                 <p>You don't have any courses yet.</p>
                 <button
-                  className="support-button"
-                  onClick={() =>
-                    (window.location.href =
-                      "mailto:support@example.com")
-                  }
-                >
-                  Contact Support
-                </button>
+  className="support-button"
+  onClick={() => {
+    const whatsappLink = "https://wa.me/917559436129?text=Unable%20to%20see%20any%20course%20on%20the%20website";
+    window.open(whatsappLink, "_blank");
+  }}
+>
+  Contact Support
+</button>
+
               </div>
             ) : (
               courses.map((course) => (
