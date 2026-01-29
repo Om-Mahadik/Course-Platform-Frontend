@@ -12,6 +12,9 @@ import VideoDetails from "./pages/users/VideoDetails";
 // Layouts
 import UserLayout from "./components/users/UserLayout";
 
+//Widgets
+import ServerStatusWidget from "./components/universal/ServerStatusWidget";
+
 function App() {
   const [user, setUser] = useState(null);
   const [authChecked, setAuthChecked] = useState(false);
@@ -29,6 +32,11 @@ function App() {
   }
 
   return (
+
+    <>
+    {/* Floating server status widget */}
+    <ServerStatusWidget />
+
     <Routes>
       {/* LOGIN */}
       <Route
@@ -84,6 +92,7 @@ function App() {
         }
       />
     </Routes>
+    </>
   );
 }
 
